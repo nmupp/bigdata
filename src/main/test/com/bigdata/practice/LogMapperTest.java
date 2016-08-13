@@ -16,10 +16,10 @@ public class LogMapperTest {
     @Test
     public void processData() throws IOException {
         Text value = new Text("Narsi,bunnu,Narsi,Narsi");
-        new MapDriver<LongWritable,Text,Text,IntWritable>()
+        new MapDriver<LongWritable, Text, Text, IntWritable>()
                 .withMapper(new LogMapper())
-                .withInput(new LongWritable(0),value)
-                .withOutput(new Text("Narsi"),new IntWritable(3))
+                .withInput(new LongWritable(0), value)
+                .withOutput(new Text("Narsi"), new IntWritable(3))
                 .runTest();
     }
 
