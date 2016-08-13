@@ -4,3 +4,9 @@
 *.xml
 
 *.iml
+
+*.class
+
+*.properties
+
+*.lst
