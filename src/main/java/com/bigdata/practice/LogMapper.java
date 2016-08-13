@@ -15,10 +15,12 @@ public class LogMapper extends Mapper<LongWritable,Text,Text,IntWritable> {
     @Override
     protected void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
         String [] data = value.toString().split(",");
+        int counter = 0;
         for(String dataValue:data) {
             if(dataValue.equals("Narsi")) {
-                context.write(new Text(dataValue),new IntWritable(1));
+                counter += 1;
             }
         }
+        context.write(new Text("Narsi"),new IntWritable(counter));
     }
 }
